@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
     Rigidbody2D rb;
 
     public bool isMoving = false;
+
+    public AudioSource audioSource;
+    public AudioClip endSound;
+    public AudioClip hittedSound;
 
     void Start()
     {
@@ -28,24 +32,29 @@ public class PlayerControl : MonoBehaviour
             {
                 rb.velocity = Vector2.up * speed;
                 isMoving = true;
+                audioSource.PlayOneShot(hittedSound);
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 rb.velocity = Vector2.down * speed;
-               isMoving = true;
+                isMoving = true;
+                audioSource.PlayOneShot(hittedSound);
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 rb.velocity = Vector2.right * speed;
                 isMoving = true;
+                audioSource.PlayOneShot(hittedSound);
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 rb.velocity = Vector2.left * speed;
                 isMoving = true;
+                audioSource.PlayOneShot(hittedSound);
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -53,13 +62,22 @@ public class PlayerControl : MonoBehaviour
             Debug.Log("出界!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (other.gameObject.name == "Wall-up")
+        {
+            rb.velocity = Vector2.zero;SceneManager.LoadScene(3);
+            isMoving = false;
+        }
         if (other.gameObject.name == "Play")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         if (other.gameObject.name == "Setting")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
+        }
+        if (other.gameObject.tag == "Play")
+        {
+            SceneManager.LoadScene(4);
         }
         if (other.gameObject.name == "Quit")
         {
@@ -70,15 +88,23 @@ public class PlayerControl : MonoBehaviour
 #endif
             Application.Quit();
         }
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+
         if (other.gameObject.tag == "Box")
         {
-            Debug.Log("撞到啦!!");
+            audioSource.Play();
             rb.velocity = Vector2.zero;
             isMoving = false;
         }
+        if (other.gameObject.name == "End")
+        {
+            audioSource.PlayOneShot(endSound);
+            rb.velocity = Vector2.zero;
+            Invoke("NextLevel",0.5f);
+        }
+    }
+    void NextLevel()
+    {   
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 

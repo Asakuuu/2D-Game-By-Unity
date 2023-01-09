@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2185413381520471155}
   - component: {fileID: 2185413381520471152}
   - component: {fileID: 2185413381520471153}
-  - component: {fileID: 6545877486504400319}
+  - component: {fileID: 2832928998338689644}
+  - component: {fileID: 5090601480438260904}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6545877486504400319
+--- !u!114 &2832928998338689644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +144,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2185413381520471166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7527f7ec1804aef45a4b6b9a770a8b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ccba2f6c3d05804a9cbc49d2c059b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 10
+  isMoving: 1
+  say: {fileID: 0}
+  isSetnpc: 1
+  isMenunpc: 1
+  isLearnnpc: 1
+--- !u!114 &5090601480438260904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2185413381520471166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1db487742fe5da46846769c367ca04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0

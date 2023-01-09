@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject play;
     public GameObject setting;
     public GameObject quit;
+    public GameObject title;
 
 
 
@@ -24,6 +25,7 @@ public class MainMenu : MonoBehaviour
         play.gameObject.SetActive(false);
         setting.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
+        title.gameObject.SetActive(false);
     }
 
     void Update()
@@ -40,6 +42,11 @@ public class MainMenu : MonoBehaviour
             play.gameObject.SetActive(true);
             setting.gameObject.SetActive(true);
             quit.gameObject.SetActive(true);
+            title.gameObject.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

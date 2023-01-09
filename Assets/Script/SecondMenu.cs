@@ -4,30 +4,18 @@ using UnityEngine;
 
 public class SecondMenu : MonoBehaviour
 {
-    public GameObject player;
-    public float speed = 10f;
-    public bool isMoving = true;
+    private NPCControl npc;
 
     void Start()
     {
-
+        npc = GetComponent<NPCControl>();
+        npc.isSetnpc = false;
+        npc.isMenunpc = true;
+        npc.isLearnnpc = false;
     }
 
     void Update()
     {
-            Move();
-    }
-
-    void Move()
-    {
-        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
-        Invoke("Die", 2f);
-    }
-
-    void Die()
-    {
-        player.SetActive(true);
-        gameObject.SetActive(false);
-        Destroy (gameObject);
+           
     }
 }

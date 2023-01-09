@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetEchoEffect : MonoBehaviour
+public class NPCEcho : MonoBehaviour
 {
      float timeBtwSpawns;
     public float startTimeBtwSpawns;
 
     public GameObject echo;
-    private SecondMenu npc;
+    private NPCControl npc;
 
 
     void Start()
     {
-        npc = GetComponent<SecondMenu>();
+        npc = GetComponent<NPCControl>();
     }
 
     void Update()

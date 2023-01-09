@@ -14,11 +14,16 @@ public class BoxControl : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("®ø¥¢°Õ!!");
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.name == "NPC")
+        {
             gameObject.SetActive(false);
             Destroy(gameObject);
         }

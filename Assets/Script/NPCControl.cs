@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class NPCControl : MonoBehaviour
 {
+    public GameObject player;
     public float speed = 10f;
     public bool isMoving = true;
     public GameObject say;
 
     bool changed = false;
+    public bool isSetnpc = true;
+    public bool isMenunpc = true;
+    public bool isLearnnpc = true;
 
     void Start()
     {
@@ -18,6 +22,22 @@ public class NPCControl : MonoBehaviour
     }
 
     void Update()
+    {
+        if (isSetnpc)
+        {
+            AtSetting();
+        }
+        else  if (isMenunpc)
+        {
+            AtMenu();
+        }       
+        else if (isLearnnpc)
+        {
+            AtLearn();
+        }
+    }
+
+    void AtSetting()
     {
         if (!changed)
         {
@@ -29,21 +49,54 @@ public class NPCControl : MonoBehaviour
         }
     }
 
+    void AtMenu()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
+        Invoke("Die", 2f);
+    }
+
+    void AtLearn()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
+        Invoke("SayLearn", 2f);
+    }
+
+    void Die()
+    {
+        player.SetActive(true);
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
     void Move()
     {
-        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(-11, 0), speed * Time.deltaTime);
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(-16, 0), speed * Time.deltaTime);
         Invoke("Say",2f);
     }
     void Say()
     {
         say.SetActive(true);
-        Invoke("Back", 5f);
+        Invoke("Back", 4.5f);
     }
-
     void Back()
     {
         changed = true;
-        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(11, 0), speed * Time.deltaTime);
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(16, 0), speed * Time.deltaTime);
+    }
+
+    void SayLearn()
+    {
+        say.SetActive(true);
+        isMoving = false;
+        Invoke("Die", 2f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Box")
+        {
+            Die();
+        }
     }
 }
     
