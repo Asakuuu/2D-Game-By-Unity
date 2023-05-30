@@ -2366,6 +2366,7 @@ GameObject:
   - component: {fileID: 1775749818}
   - component: {fileID: 1775749820}
   - component: {fileID: 1775749819}
+  - component: {fileID: 1775749821}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2389,7 +2390,7 @@ MonoBehaviour:
   scrollPos: {x: 35, y: 51}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 280
+  blockViewHeight: 520
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -2400,7 +2401,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1775749797}
   selectedCommands:
-  - {fileID: 1775749800}
+  - {fileID: 1775749817}
   variables: []
   description: 
   stepPause: 0
@@ -2604,6 +2605,7 @@ MonoBehaviour:
   - {fileID: 1775749818}
   - {fileID: 1775749800}
   - {fileID: 1775749801}
+  - {fileID: 1775749821}
   - {fileID: 1775749799}
   - {fileID: 1775749795}
   - {fileID: 1775749788}
@@ -3076,7 +3078,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 49923921}
 --- !u!114 &1775749819
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3103,7 +3105,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 49923921}
 --- !u!114 &1775749820
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3128,6 +3130,33 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 49923921}
+--- !u!114 &1775749821
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775749774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 33
+  indentLevel: 0
+  storyText: "\"\u8ACB\u6309\u4E0B\"\u2192\"\u4EE5\u555F\u52D537419\""
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &1811548796
 GameObject:
   m_ObjectHideFlags: 0

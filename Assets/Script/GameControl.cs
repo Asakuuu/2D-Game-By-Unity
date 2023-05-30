@@ -20,12 +20,12 @@ public class GameControl : MonoBehaviour
     {
        
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)) 
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene(0);
         }
@@ -33,6 +33,13 @@ public class GameControl : MonoBehaviour
         if (!isPause)
         {
             if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("¼È°±");
+                pause.gameObject.SetActive(true);
+                Time.timeScale = 0;
+                isPause = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Debug.Log("¼È°±");
                 pause.gameObject.SetActive(true);

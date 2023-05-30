@@ -1,3 +1,4 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,7 +77,7 @@ public class NPCControl : MonoBehaviour
     void Say()
     {
         say.SetActive(true);
-        Invoke("Back", 4.5f);
+        Invoke("Back", 8f);
     }
     void Back()
     {
@@ -88,7 +89,10 @@ public class NPCControl : MonoBehaviour
     {
         say.SetActive(true);
         isMoving = false;
-        Invoke("Die", 2f);
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Die();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
