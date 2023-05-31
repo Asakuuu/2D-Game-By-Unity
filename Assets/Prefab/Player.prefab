@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8330662580198223958}
   - component: {fileID: 583149948}
   - component: {fileID: 583149949}
-  - component: {fileID: 8010443960846391388}
+  - component: {fileID: -4021382434486494832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -150,9 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   isMoving: 0
-  audioSource: {fileID: 8010443960846391388}
+  audioSource: {fileID: -4021382434486494832}
   endSound: {fileID: 8300000, guid: fe1ccdc6c7ab1d140a57cfefb4325e2b, type: 3}
-  hittedSound: {fileID: 8300000, guid: 0e1943a51e6f53540b06ad287667d0bf, type: 3}
+  hittedSound: {fileID: 8300000, guid: 7dbbeeb5c2dedab44aef035e76192d89, type: 3}
 --- !u!114 &583149949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0
   echo: {fileID: 5993854932892303666, guid: bd8b43d038aa6a84f8a2a25ccecc652b, type: 3}
---- !u!82 &8010443960846391388
+--- !u!82 &-4021382434486494832
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,9 +177,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7dbbeeb5c2dedab44aef035e76192d89, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_audioClip: {fileID: 8300000, guid: 0e1943a51e6f53540b06ad287667d0bf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
