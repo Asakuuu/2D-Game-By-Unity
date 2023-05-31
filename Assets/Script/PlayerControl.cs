@@ -32,25 +32,25 @@ public class PlayerControl : MonoBehaviour
             {
                 rb.velocity = Vector2.up * speed;
                 isMoving = true;
-                audioSource.PlayOneShot(hittedSound);
+                audioSource.Play();
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 rb.velocity = Vector2.down * speed;
                 isMoving = true;
-                audioSource.PlayOneShot(hittedSound);
+                audioSource.Play();
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 rb.velocity = Vector2.right * speed;
                 isMoving = true;
-                audioSource.PlayOneShot(hittedSound);
+                audioSource.Play();
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 rb.velocity = Vector2.left * speed;
                 isMoving = true;
-                audioSource.PlayOneShot(hittedSound);
+                audioSource.Play();
             }
         }
     }
@@ -73,6 +73,22 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.name == "Play")
         {
             SceneManager.LoadScene(7);
+        }
+        if (other.gameObject.name == "Level")
+        {
+            SceneManager.LoadScene(9);
+        }
+        if (other.gameObject.name == "Back")
+        {
+            SceneManager.LoadScene(8);
+        }
+        if (other.gameObject.name == "Egg_up")
+        {
+            SceneManager.LoadScene(15);
+        }
+        if(other.gameObject.name == "Egg_down")
+        {
+            SceneManager.LoadScene(16);
         }
 
         if (other.gameObject.tag == "QuitWall")
@@ -97,7 +113,7 @@ public class PlayerControl : MonoBehaviour
 
         if (other.gameObject.tag == "Box")
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(hittedSound);
             rb.velocity = Vector2.zero;
             isMoving = false;
         }

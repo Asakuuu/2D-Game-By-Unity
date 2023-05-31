@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC_in_Team : MonoBehaviour
+public class NPC_in_Out : MonoBehaviour
 {
     private NPCControl npc;
 
@@ -12,9 +12,10 @@ public class NPC_in_Team : MonoBehaviour
         npc.isLearnnpc = false;
         npc.isSetnpc = false;
         npc.isMenunpc = false;
-        npc.isTeamnpc = true;
+        npc.isTeamnpc = false;
         npc.isQuitnpc = false;
-        npc.isOutnpc = false;
+        npc.isOutnpc = true;
+        npc.isPlaynpc = false;
     }
 
     void Update()

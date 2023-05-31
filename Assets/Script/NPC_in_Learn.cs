@@ -14,6 +14,8 @@ public class NPC_in_Learn : MonoBehaviour
         npc.isMenunpc = false;
         npc.isTeamnpc = false;
         npc.isQuitnpc = false;
+        npc.isOutnpc = false;
+        npc.isPlaynpc = false;
     }
 
     void Update()

@@ -19,6 +19,10 @@ public class NPCControl : MonoBehaviour
     public bool isLearnnpc = false;
     public bool isTeamnpc = false;
     public bool isQuitnpc = false;
+    public bool isOutnpc = false;
+    public bool isPlaynpc = false;
+
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -46,6 +50,14 @@ public class NPCControl : MonoBehaviour
         else if (isQuitnpc)
         {
             AtQuit();
+        }
+        else if (isOutnpc)
+        {
+            AtOut();
+        }
+        else if (isPlaynpc)
+        {
+            AtPlay();
         }
     }
 
@@ -88,13 +100,18 @@ public class NPCControl : MonoBehaviour
     void AtQuit()
     {
         gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
-        Invoke("SayLearn", 2f);
-    }
-    void Say()
-    {
-        say.SetActive(true);
-        isMoving = false;
         Invoke("Die", 2f);
+    }
+
+    void AtOut()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
+        Invoke("Play", 4f);
+    }
+
+    void AtPlay()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(-4, 0), speed * Time.deltaTime);
     }
 
     void Die()
@@ -124,10 +141,6 @@ public class NPCControl : MonoBehaviour
     {
         say.SetActive(true);
         isMoving = false;
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Die();
-        }
     }
 
     void UD_Move()
@@ -146,12 +159,24 @@ public class NPCControl : MonoBehaviour
         gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0,-10), speed * Time.deltaTime);
     }
 
+    void Play()
+    {
+        isOutnpc = false;
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(11, 0), speed * Time.deltaTime);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Box")
         {
-            Die();
+            audioSource.Play();
+            Invoke("Die",0.5f);
+        }
+        if (other.gameObject.tag == "Play")
+        {
+            SceneManager.LoadScene(9);
         }
     }
+
 }
     

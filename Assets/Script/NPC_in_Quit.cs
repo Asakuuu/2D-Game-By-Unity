@@ -10,10 +10,12 @@ public class NPC_in_Quit : MonoBehaviour
     {
         npc = GetComponent<NPCControl>();
         npc.isSetnpc = false;
-        npc.isMenunpc = true;
+        npc.isMenunpc = false;
         npc.isLearnnpc = false;
         npc.isTeamnpc = false;
         npc.isQuitnpc = true;
+        npc.isOutnpc = false;
+        npc.isPlaynpc = false;
     }
 
     void Update()
