@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCEcho : MonoBehaviour
 {
-     float timeBtwSpawns;
+    float timeBtwSpawns;
     public float startTimeBtwSpawns;
 
     public GameObject echo;

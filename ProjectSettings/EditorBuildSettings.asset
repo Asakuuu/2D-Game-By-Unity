@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Setting.unity
     guid: 1192a83e897ea3d4f89b9c57e3dd0eef
   - enabled: 1
-    path: Assets/Scenes/Mainmenu 1.unity
+    path: Assets/Scenes/Set_to_Menu.unity
     guid: 1882f701d5bee5a47a07dd96bfb2266e
+  - enabled: 1
+    path: Assets/Scenes/Team.unity
+    guid: 218da09d8b87b284c8ee3722ff07adf8
+  - enabled: 1
+    path: Assets/Scenes/Team_to_Menu.unity
+    guid: 484c2ef5eea393e408e83998a83a6ceb
+  - enabled: 1
+    path: Assets/Scenes/Quit.unity
+    guid: 9bb358ce4f4b5d34a92d3c4782590414
+  - enabled: 1
+    path: Assets/Scenes/Quit_to_Menu.unity
+    guid: a710e2ebe82910b4ca59988b068cb416
   - enabled: 1
     path: Assets/Scenes/Learn.unity
     guid: 14326b007e4dd6a449d3d769f9f91caf

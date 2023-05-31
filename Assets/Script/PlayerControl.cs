@@ -57,27 +57,27 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Wall")
-        {
-            Debug.Log("出界!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        if (other.gameObject.name == "Wall-up")
-        {
-            rb.velocity = Vector2.zero;SceneManager.LoadScene(3);
-            isMoving = false;
-        }
-        if (other.gameObject.name == "Play")
-        {
-            SceneManager.LoadScene(3);
-        }
+
         if (other.gameObject.name == "Setting")
         {
             SceneManager.LoadScene(1);
         }
-        if (other.gameObject.tag == "Play")
+        if (other.gameObject.name == "Team")
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
+        }
+        if (other.gameObject.name == "QuitWall")
+        {
+            SceneManager.LoadScene(5);
+        }
+        if (other.gameObject.name == "Play")
+        {
+            SceneManager.LoadScene(7);
+        }
+
+        if (other.gameObject.tag == "QuitWall")
+        {
+            SceneManager.LoadScene(6);
         }
         if (other.gameObject.name == "Quit")
         {
@@ -87,6 +87,12 @@ public class PlayerControl : MonoBehaviour
             Application.Quit();
 #endif
             Application.Quit();
+        }
+
+        if (other.gameObject.tag == "Wall")
+        {
+            Debug.Log("出界!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (other.gameObject.tag == "Box")

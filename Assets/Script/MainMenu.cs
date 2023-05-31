@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject setting;
     public GameObject quit;
     public GameObject title;
+    public GameObject team;
 
 
 
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour
         setting.gameObject.SetActive(false);
         quit.gameObject.SetActive(false);
         title.gameObject.SetActive(false);
+        team.gameObject.SetActive(false);
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class MainMenu : MonoBehaviour
             setting.gameObject.SetActive(true);
             quit.gameObject.SetActive(true);
             title.gameObject.SetActive(true);
+            team.gameObject.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {

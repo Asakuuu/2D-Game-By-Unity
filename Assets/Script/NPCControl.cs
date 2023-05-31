@@ -12,10 +12,13 @@ public class NPCControl : MonoBehaviour
     public bool isMoving = true;
     public GameObject say;
 
-    bool changed = false;
-    public bool isSetnpc = true;
-    public bool isMenunpc = true;
-    public bool isLearnnpc = true;
+    bool LR_changed = false;
+    bool UD_changed = false;
+    public bool isSetnpc = false;
+    public bool isMenunpc = false;
+    public bool isLearnnpc = false;
+    public bool isTeamnpc = false;
+    public bool isQuitnpc = false;
 
     void Start()
     {
@@ -36,17 +39,25 @@ public class NPCControl : MonoBehaviour
         {
             AtLearn();
         }
+        else if (isTeamnpc)
+        {
+            AtTeam();
+        }
+        else if (isQuitnpc)
+        {
+            AtQuit();
+        }
     }
 
     void AtSetting()
     {
-        if (!changed)
+        if (!LR_changed)
         {
-            Move();
+            LR_Move();
         }
         else
         {
-            Back();
+            LR_Back();
         }
     }
 
@@ -62,6 +73,30 @@ public class NPCControl : MonoBehaviour
         Invoke("SayLearn", 2f);
     }
 
+    void AtTeam()
+    {
+        if (!UD_changed)
+        {
+            UD_Move();
+        }
+        else
+        {
+            UD_Back();
+        }
+    }
+
+    void AtQuit()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0, 0), speed * Time.deltaTime);
+        Invoke("SayLearn", 2f);
+    }
+    void Say()
+    {
+        say.SetActive(true);
+        isMoving = false;
+        Invoke("Die", 2f);
+    }
+
     void Die()
     {
         player.SetActive(true);
@@ -69,20 +104,20 @@ public class NPCControl : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Move()
+    void LR_Move()
     {
-        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(-16, 0), speed * Time.deltaTime);
-        Invoke("Say",2f);
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(-11, 0), speed * Time.deltaTime);
+        Invoke("LR_Say",2f);
     }
-    void Say()
+    void LR_Say()
     {
         say.SetActive(true);
-        Invoke("Back", 8f);
+        Invoke("LR_Back", 8f);
     }
-    void Back()
+    void LR_Back()
     {
-        changed = true;
-        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(16, 0), speed * Time.deltaTime);
+        LR_changed = true;
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(11, 0), speed * Time.deltaTime);
     }
 
     void SayLearn()
@@ -93,6 +128,22 @@ public class NPCControl : MonoBehaviour
         {
             Die();
         }
+    }
+
+    void UD_Move()
+    {
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0,10), speed * Time.deltaTime);
+        Invoke("UD_Say", 2f);
+    }
+    void UD_Say()
+    {
+        say.SetActive(true);
+        Invoke("UD_Back", 10f);
+    }
+    void UD_Back()
+    {
+        UD_changed = true;
+        gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.localPosition, new Vector2(0,-10), speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
