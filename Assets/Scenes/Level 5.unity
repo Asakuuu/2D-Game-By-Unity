@@ -197,6 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dea1c78ef808c342b8c5773382daa7f, type: 3}
+--- !u!1 &95070577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8330662580198223961, guid: 5dea1c78ef808c342b8c5773382daa7f, type: 3}
+  m_PrefabInstance: {fileID: 95070576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &161467171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4420694209990353386, guid: 8190ea4831c052445bf6ceb74491a198, type: 3}
@@ -1582,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420694209990353386, guid: 8190ea4831c052445bf6ceb74491a198, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.865674
+      value: 2.53
       objectReference: {fileID: 0}
     - target: {fileID: 4420694209990353386, guid: 8190ea4831c052445bf6ceb74491a198, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3326,7 +3331,7 @@ PrefabInstance:
     - target: {fileID: 2832928998338689644, guid: 0adf884be3acd374780b24f1675ed021, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 95070577}
     - target: {fileID: 2832928998338689644, guid: 0adf884be3acd374780b24f1675ed021, type: 3}
       propertyPath: isSetnpc
       value: 0
@@ -3825,7 +3830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420694209990353386, guid: 8190ea4831c052445bf6ceb74491a198, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.166889
+      value: 4.71
       objectReference: {fileID: 0}
     - target: {fileID: 4420694209990353386, guid: 8190ea4831c052445bf6ceb74491a198, type: 3}
       propertyPath: m_LocalPosition.y
