@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Play
   - QuitWall
+  - Sound
   layers:
   - Default
   - TransparentFX

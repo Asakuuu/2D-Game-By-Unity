@@ -30,6 +30,8 @@ public class GameControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+            isPause = !isPause;
         }
 
         if (!isPause)
