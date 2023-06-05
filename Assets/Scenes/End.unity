@@ -2525,7 +2525,11 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1775749797}
   selectedCommands:
+<<<<<<< HEAD
   - {fileID: 1775749823}
+=======
+  - {fileID: 1775749822}
+>>>>>>> origin/main
   variables: []
   description: 
   stepPause: 0
@@ -2821,7 +2825,11 @@ MonoBehaviour:
   waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
+<<<<<<< HEAD
   setSayDialog: {fileID: 2047852171}
+=======
+  setSayDialog: {fileID: 49923921}
+>>>>>>> origin/main
 --- !u!114 &1775749821
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2884,10 +2892,17 @@ MonoBehaviour:
   waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
+<<<<<<< HEAD
   setSayDialog: {fileID: 2047852171}
 --- !u!114 &1775749824
 MonoBehaviour:
   m_ObjectHideFlags: 2
+=======
+  setSayDialog: {fileID: 49923921}
+--- !u!114 &1775749824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+>>>>>>> origin/main
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2918,7 +2933,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 35
   indentLevel: 0
+<<<<<<< HEAD
   storyText: "\u5C07\u57F7\u884C\u5F37\u5236\u9A45\u9010\u7A0B\u5E8F"
+=======
+  storyText: "\"\u5C07\u57F7\u884C\u5F37\u5236\u9A45\u9010\u7A0B\u5E8F\""
+>>>>>>> origin/main
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2930,7 +2949,11 @@ MonoBehaviour:
   waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
+<<<<<<< HEAD
   setSayDialog: {fileID: 2047852171}
+=======
+  setSayDialog: {fileID: 49923921}
+>>>>>>> origin/main
 --- !u!114 &1775749826
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2951,7 +2974,11 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &1775749827
 MonoBehaviour:
+<<<<<<< HEAD
   m_ObjectHideFlags: 2
+=======
+  m_ObjectHideFlags: 0
+>>>>>>> origin/main
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
